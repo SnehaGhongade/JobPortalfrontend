@@ -1,0 +1,85 @@
+<app-navbarcompany></app-navbarcompany>
+<br>
+<br>
+<div style="background-color: #e7eaec">
+<div class="card mx-auto"
+  style="width: 650px; background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  <div class="card-body">
+    <div class="card-header text-center fs-4 fw-bold"
+      style="background-color: #007bff; color: #ffffff; border-radius: 8px 8px 0 0; padding: 10px;">
+      Post  Job
+    </div>
+    <div class="card-body">
+      <form class="row g-3" [formGroup]="formValue">
+        <!-- <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">JobId</label>
+          <input type="number" formControlName="jobId" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" required>
+          <div *ngIf="formValue.get('jobId')!.invalid && formValue.get('jobId')!.touched"
+            style="color: red; margin-top: 5px;">Required</div>
+        </div> -->
+ 
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">JobTitle</label><span style="color:red">*</span>
+          <input type="text" formControlName="jobTitle" class="form-control" id="exampleInputPassword1" required>
+          <div *ngIf="formValue.get('jobTitle')!.invalid && formValue.get('jobTitle')!.touched"
+            style="color: red; margin-top: 5px;">Required</div>
+        </div>
+ 
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">JobDescription</label><span style="font-size:24px;color:red">*</span>
+          <input type="text" formControlName="jobDescription" class="form-control" id="exampleInputPassword1" required>
+          <div *ngIf="formValue.get('jobDescription')!.invalid && formValue.get('jobDescription')!.touched"
+            style="color: red; margin-top: 5px;">Required</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">ExperienceLevel</label><span style="font-size:24px;color:red">*</span>
+          <input type="text" formControlName="jobExperienceLevel" class="form-control" id="exampleInputPassword1"
+            required>
+          <div *ngIf="formValue.get('jobExperienceLevel')!.invalid && formValue.get('jobExperienceLevel')!.touched"
+            style="color: red; margin-top: 5px;">Required</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">SkillSet</label><span style="font-size:24px;color:red">*</span>
+          <input type="text" formControlName="jobSkillSet" class="form-control" id="exampleInputPassword1" required>
+          <div *ngIf="formValue.get('jobSkillSet')!.invalid && formValue.get('jobSkillSet')!.touched"
+            style="color: red; margin-top: 5px;">Required</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">PayScale</label><span style="font-size:24px;color:red">*</span>
+          <input type="text" formControlName="jobPayScale" class="form-control" id="exampleInputPassword1" required>
+          <div *ngIf="formValue.get('jobPayScale')!.invalid && formValue.get('jobPayScale')!.touched"
+            style="color: red; margin-top: 5px;">Required</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Location</label><span style="font-size:24px;color:red">*</span>
+          <input type="text" formControlName="jobLocation" class="form-control" id="exampleInputPassword1" required>
+          <div *ngIf="formValue.get('jobLocation')!.invalid && formValue.get('jobLocation')!.touched"
+            style="color: red; margin-top: 5px;">Required</div>
+        </div>
+ 
+ 
+        <!-- <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">CompanyId</label><span style="font-size:24px;color:red">*</span>
+          <input type="number" formControlName="companyId" class="form-control" id="exampleInputPassword1" required>
+          <div *ngIf="formValue.get('companyId')!.invalid && formValue.get('companyId')!.touched"
+            style="color: red; margin-top: 5px;">Required</div>
+        </div> -->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">CompanyId</label><span style="font-size:24px;color:red">*</span>
+          <input type="number" formControlName="companyId" class="form-control disabled-input" id="exampleInputPassword1" required readonly>
+          <div *ngIf="formValue.get('companyId')!.invalid && formValue.get('companyId')!.touched"
+            style="color: red; margin-top: 5px;">Required</div>
+        </div>
+       
+        
+ 
+        <div class="d-grid gap-2">
+          <button type="button" class="btn btn-primary" (click)="postJob()">Submit</button>
+          <button type="button" class="btn btn-secondary" id="cancel" (click)="onSubmit()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

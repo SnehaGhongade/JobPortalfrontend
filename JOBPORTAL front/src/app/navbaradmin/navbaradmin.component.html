@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" routerLink="/welcomeadmin"><img src="assets\search-job-icon-vector.webp" style="width: 30px;height: 30px;">Welcome</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/jobseekerdetails">Jobseeker Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/companydetails">Company Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/joblist">Job List</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/applicantslist">Applicants List</a>
+          </li> -->
+          
+        </ul>
+      </div>
+      <div class="d-flex">
+        <button class="btn btn-primary" style="margin: 3px;" routerLink="/welcomeadmin"> Back </button>
+        <button class="btn btn-danger" (click)="onsubmit()">LogOut</button>
+      </div>
+    </div>
+  </nav>

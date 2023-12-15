@@ -1,0 +1,34 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header text-white text-center fs-3" style="background-color: #e3c500;">
+            Schedule Interview
+        </div>
+        <div>Schedule Interview for Job Seeker ID: {{ jobSeekerId }} </div>
+        <div *ngIf="interviewDate && interviewTime">
+            <div>Interview Date: {{ interviewDate }}</div>
+            <div>Interview Time: {{ interviewTime }}</div>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="submitInterview()" #interviewForm="ngForm">
+                <input type="hidden" name="jobSeekerId" [(ngModel)]="jobSeekerId">
+                <div class="mb-3">
+                    <label for="interviewDate" class="form-label">Interview Date:</label>
+                    <input type="date" id="interviewDate" name="interviewDate" [(ngModel)]="interviewDate" required
+                        [min]="minInterviewDate">
+                </div>
+                <div class="mb-3">
+                    <label for="interviewTime" class="form-label">Interview Time:</label>
+                    <input type="time" id="interviewTime" name="interviewTime" [(ngModel)]="interviewTime" required
+                        [min]="minInterviewTime" [max]="maxInterviewTime">
+                </div>
+                <div class="mb-3">
+                    <label for="interviewLocation" class="form-label">Interview Location:</label>
+                    <input type="text" id="interviewLocation" name="interviewLocation" [(ngModel)]="interviewLocation" required>
+                </div>                
+                <div class="mb-3">
+                    <button type="submit" style="background-color: darkturquoise;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<app-navbarjobseeker></app-navbarjobseeker>
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="input-group">
+    <span class="input-group-text" id="search-icon">
+      <i class="fas fa-search"></i>
+    </span>
+    <input class="form-control" type="text" name="JobTitle" [(ngModel)]="JobTitle" (ngModelChange)="Search()"
+      placeholder="Search by JobTitle" aria-label="Search" aria-describedby="search-icon">
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header  text-white text-center fs-3" style="background-color: #e3c500;">
+      Job List
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-hover table-responsive-md">
+        <thead style="background-color: #6c757d;" class="text-white">
+          <tr>
+            <th scope="col">JobId</th>
+            <th scope="col">JobTitle</th>
+            <th scope="col">JobDescription</th>
+            <th scope="col">JobExperienceLevel</th>
+            <th scope="col">JobSkillSet</th>
+            <th scope="col">JobPayScale</th>
+            <th scope="col">JobLocation</th>
+            <th scope="col">CompanyId</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let jb of joblist">
+          <tr>
+            <td>{{jb.jobId}}</td>
+            <td>{{jb.jobTitle}}</td>
+            <td>{{jb.jobDescription}}</td>
+            <td>{{jb.jobExperienceLevel}}</td>
+            <td>{{jb.jobSkillSet}}</td>
+            <td>{{jb.jobPayScale}}</td>
+            <td>{{jb.jobLocation}}</td>
+            <td>{{jb.companyId}}</td>
+            <td>
+              <ng-container *ngIf="jb.isApplied; else applyLink">
+                <span>Applied</span>
+              </ng-container>
+              <ng-template #applyLink>
+
+                <!-- Add routerLink parameter to pass company details -->
+<!-- <button class="btn btn-success" [routerLink]="['/applyforjob', jb.jobId, jb.companyId]">Apply</button> -->
+<!-- Pass both companyId and companyName as parameters -->
+<button class="btn btn-success" [routerLink]="['/applyforjob', jb.jobId, jb.companyId, jb.companyName]">Apply</button>
+
+                <!-- <button class="btn btn-success" [routerLink]="['/applyforjob', jb.jobId]">Apply</button> -->
+              </ng-template>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

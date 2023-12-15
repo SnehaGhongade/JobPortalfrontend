@@ -1,0 +1,43 @@
+<app-navbaradmin></app-navbaradmin>
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="input-group">
+    <span class="input-group-text" id="search-icon">
+      <i class="fas fa-search"></i>
+    </span>
+    <input class="form-control" type="text" name="companyName" [(ngModel)]="companyName" (ngModelChange)="Search()"
+      placeholder="Search by Company Name" aria-label="Search" aria-describedby="search-icon">
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header  text-white text-center fs-3" style="background-color: #e3c500;">
+      Company Details List
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-hover table-responsive-md">
+        <thead style="background-color: #6c757d;" class="text-white">
+          <tr>
+            <th scope="col">CompanyId</th>
+            <th scope="col">CompanyName</th>
+            <th scope="col">CompanyEmail</th>
+            <th scope="col">CompanyPhone</th>
+            <th scope="col">CompanyAddress</th>
+            <th scope="col">CompanyDescription</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let jb of companyData">
+          <tr>
+            <td>{{jb.companyId}}</td>
+            <td>{{jb.companyName}}</td>
+            <td>{{jb.companyEmail}}</td>
+            <td>{{jb.companyPhone}}</td>
+            <td>{{jb.companyAddress}}</td>
+            <td>{{jb.companyDescription}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

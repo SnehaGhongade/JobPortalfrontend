@@ -1,0 +1,13 @@
+<div *ngIf="jobSeeker">
+    <h2>Welcome, {{ jobSeeker.jobSeekerName }}!</h2>
+    <div>
+      <h3>Personal Information</h3>
+      <p>ID: {{ jobSeeker.jobSeekerId }}</p>
+      <p>Name: {{ jobSeeker.jobSeekerName }}</p>
+      <p>Gender: {{ jobSeeker.gender }}</p>
+      <p>Email: {{ jobSeeker.email }}</p>
+      <p>Mobile Number: {{ jobSeeker.mobileNumber }}</p>
+      <p>Skills: {{ jobSeeker.skills }}</p>
+    </div>
+  </div>
+  

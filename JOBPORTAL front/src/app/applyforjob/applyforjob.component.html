@@ -1,0 +1,37 @@
+
+<app-navbarjobseeker></app-navbarjobseeker>
+<br>
+<br>
+<div class="card mx-auto " style="width: 650px;">    <div class="card-body">
+    <div class="card-header text-center fs-4 fw-bold">
+     Apply For Job
+  </div>
+  <div class="card-body">
+    <p class="text-center">You are applying for a job at Company ID: {{ companyId }}</p>
+
+    <!-- <p class="text-center">You are applying for a job at Company ID: {{ joblist[0]?.companyId }}</p> -->
+    <form class="row g-3" [formGroup]="JobGroup">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">JobSeekerId</label>
+        <input type="number" formControlName="jobSeekerId" class="form-control disabled-input" id="exampleInputPassword1" required readonly>
+        <span *ngIf="JobGroup.get('jobId')?.disabled">You cannot edit this field</span>
+
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">JobId</label>
+        <input type="number" formControlName="jobId" class="form-control disabled-input" id="exampleInputPassword1" required readonly>
+        <span *ngIf="JobGroup.get('jobId')?.disabled">You cannot edit this field</span>
+
+      </div>
+      <div class="mb-3">
+ 
+        <label for="exampleInputPassword1" class="form-label">Resume</label>
+          <input type="file" id="file" name="file" formControlName="resume" class="form-control" (change)="onFileSelected($event)" accept=".pdf,.doc,.docx">
+ 
+      </div>
+      <button type="button" class="btn btn-primary" [disabled]="JobGroup.invalid" (click)="postData()">Submit</button>
+      <button type="button" class="btn btn-primary" id="cancel" (click)="onSubmit()">Cancel</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.disabled-input {
+    background-color: #f8f8f8; 
+    border: none; 
+    cursor: not-allowed; 
+    color: #555; 
+  }
+  .disabled-input + span {
+    display: block;
+    color: #ff0000; /* Adjust the color according to your design */
+    margin-top: 5px; /* Add some spacing */
+  }
