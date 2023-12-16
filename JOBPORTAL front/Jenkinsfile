@@ -6,13 +6,13 @@ pipeline {
             steps 
             {
                 // Get some code from a GitHub repository
-
+                
             }
         
         }
         stage("Build") {
             steps {
-            dir ("/var/lib/jenkins/workspace/frontend")
+                git (url: 'https://github.com/SnehaGhongade/JobPortalfrontend.git') {
                     script {
                         // Build the .NET project
                         sh 'dotnet publish -c Release -o out'
@@ -31,3 +31,4 @@ pipeline {
             }
         }
     }
+}
