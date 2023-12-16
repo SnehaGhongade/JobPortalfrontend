@@ -6,8 +6,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Get some code from a GitHub repository
-                git 'C:\Users\sngopich\OneDrive\repository\EbsBackend.git'
-            }
+                dir("/var/lib/jenkins/workspace/frontend")            }
         }
         // stage('Build') {
         //     steps {
