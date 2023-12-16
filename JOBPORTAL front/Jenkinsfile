@@ -6,7 +6,7 @@ pipeline {
             steps 
             {
                 // Get some code from a GitHub repository
-              dir  ("/var/lib/jenkins/workspace/frontend@script/fec98651b8459b02d087f63a139849ffdb4bdce6330b8ef82df8f82a6398eeec") 
+              dir("/var/lib/jenkins/workspace/frontend@script/fec98651b8459b02d087f63a139849ffdb4bdce6330b8ef82df8f82a6398eeec") 
             }
         
         }
