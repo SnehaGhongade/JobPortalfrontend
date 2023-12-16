@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                dir("/var/lib/jenkins/workspace/frontend") {
+                git (branch: 'main', url: 'https://github.com/SnehaGhongade/JobPortalfrontend.git') {
                     script {
                         // Build the .NET project
                         sh 'dotnet publish -c Release -o out'
