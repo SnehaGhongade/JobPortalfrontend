@@ -1,50 +1,21 @@
 pipeline {
     agent any
-    // environment {
-    // }
+
     stages {
         stage('Checkout') {
             steps {
-                // Get some code from a GitHub repository
-                dir("/var/lib/jenkins/workspace/frontend")            }
+                script {
+                    // Change to a specific directory for the following steps
+                    dir('/var/lib/jenkins/workspace/frontend') {
+                        // Steps to execute inside the specified directory
+                        // For example, checkout SCM, build, test, etc.
+                        checkout scm
+                        sh 'mvn clean install'
+                    }
+                }
+            }
         }
-        // stage('Build') {
-        //     steps {
-        //         // Building the frontend
-        //         bat 'cd PayrollManagementSystemWeb && npm install'
-        //         bat 'cd PayrollManagementSystemWeb && ng build --configuration=production'
-        //     }
-        // }
-        // stage('Test') {
-        //     steps {
-        //         bat 'cd PayrollManagementSystemWeb && ng test --watch=false'
-        //     }
-        // }
 
-        // stage('SonarQube Analysis') {
-        //     steps {
-        //         // bat 'C:\\Users\\Ankita\\Downloads\\sonarqube-10.1.0.73491\\sonarqube-10.1.0.73491\\bin\\windows-x86-64\\StartSonar.bat'
-        //         withSonarQubeEnv('SonarQube') {
-        //             bat 'dotnet sonarscanner begin /k:"WebAPIDemo" /d:sonar.host.url="http://localhost:9000"  /d:sonar.token="sqp_c915c7a70ceb948a85c04b47ba64931083db3ad6"'
-        //             bat 'dotnet build'
-        //             bat 'dotnet sonarscanner end /d:sonar.token="sqp_c915c7a70ceb948a85c04b47ba64931083db3ad6"'
-        //         }
-        //     }
-        // }
-        // stage('Quality Gate') {
-        //     steps {
-        //             waitForQualityGate abortPipeline: true
-        //     }
-        // }
-        // stage('Building Image') {
-        //     steps {
-        //         bat 'cd PayrollManagementSystemWeb && docker build -t ankita3126/pmsweb:v1 .'
-        //     }
-        // }
-        // stage('Push Image to Docker Hub') {
-        //     steps {
-        //         bat 'cd PayrollManagementSystemWeb && docker push ankita3126/pmsweb:v1'
-        //     }
-        // }
+        // Add more stages as needed
     }
 }
