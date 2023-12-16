@@ -1,10 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage("checkout"){
-            steps {
+        stage("checkout")
+        {
+            steps 
+            {
                 // Get some code from a GitHub repository
-git branch: 'main', url: 'https://github.com/SnehaGhongade/JobPortalfrontend.git'              }
+              dir  ("/var/lib/jenkins/workspace/frontend@script/fec98651b8459b02d087f63a139849ffdb4bdce6330b8ef82df8f82a6398eeec") 
+            }
         
         }
         stage("Build") {
