@@ -1,6 +1,13 @@
 pipeline {
     agent any
     stages {
+        stage("checkout"){
+            steps {
+                // Get some code from a GitHub repository
+              git branch: 'main', url: 'https://github.com/SnehaGhongade/JobPortalfrontend.git'           
+              }
+        
+        }
         stage("Build") {
             steps {
                 git (branch: 'main', url: 'https://github.com/SnehaGhongade/JobPortalfrontend.git') {
